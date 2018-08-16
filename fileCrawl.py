@@ -11,6 +11,8 @@ target_file = input('Enter name of directory to copy: ')
 
 file_input = input('Enter the type of file don\'t want copied: ')
 
+print("\nThank you and please wait... \n\n")
+
 file_extension = '.' + file_input
 
 rootDir = workingDirectory + '/' + target_file
