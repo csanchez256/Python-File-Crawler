@@ -12,10 +12,10 @@ How to use:
 
 1.) Double click the fileCleanup.exe
 
-2.) Enter the name of the folder you want to clean up with NO file extension
+2.) Enter the name of the folder you want to clean up with NO file extension.
     for example:  "my_personal_file"
     
-3.) Enter the type of file you want to clean up with NO " . " (the period is not necessary)
+3.) Enter the type of file you want to clean up with NO " . " (the period is not necessary).
     for example: "mp4"
     
 OR
