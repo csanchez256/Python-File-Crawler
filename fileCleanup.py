@@ -5,7 +5,9 @@
 import os, shutil
 
 # define the directory you want to crawl
-workingDirectory = os.getcwd()
+def getWorkingDirectory():
+        workingDirectory = os.getcwd()
+        return workingDirectory
 
 target_file = input('Enter name of directory to copy: ')
 
@@ -15,13 +17,15 @@ print("\nThank you and please wait... \n\n")
 
 file_extension = '.' + file_input
 
-rootDir = workingDirectory + '/' + target_file
+rootDir = getWorkingDirectory() + '/' + target_file
 
 # Makes a copy of the folder in your working directory
-destination = workingDirectory + '/' + target_file + '_Copy'
+destination = getWorkingDirectory() + '/' + target_file + '_Copy'
 
 # Clone the entire directory
 shutil.copytree(rootDir,destination,symlinks=False,ignore=None);
+
+
 
 def removeFiles(destination, file_input):
 	# for all folders, subfolders etc... walk through
