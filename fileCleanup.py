@@ -9,18 +9,24 @@ def getWorkingDirectory():
         workingDirectory = os.getcwd()
         return workingDirectory
 
-target_file = input('Enter name of directory to copy: ')
+def targetFile():        
+        target_file = input('Enter name of directory to copy: ')
+        return target_file
 
-file_input = input('Enter the type of file don\'t want copied: ')
+def fileInput():
+        file_input = input('Enter the type of file don\'t want copied: ')
+        return file_input
 
+tf = targetFile()
+fi = fileInput()
 print("\nThank you and please wait... \n\n")
 
-file_extension = '.' + file_input
+file_extension = '.' + fi
 
-rootDir = getWorkingDirectory() + '/' + target_file
+rootDir = getWorkingDirectory() + '/' + tf
 
 # Makes a copy of the folder in your working directory
-destination = getWorkingDirectory() + '/' + target_file + '_Copy'
+destination = getWorkingDirectory() + '/' + tf + '_Copy'
 
 # Clone the entire directory
 shutil.copytree(rootDir,destination,symlinks=False,ignore=None);
@@ -39,7 +45,7 @@ def removeFiles(destination, file_input):
 				os.remove(os.path.join(dirName, file_name))
 
 
-removeFiles(destination, file_input)
+removeFiles(destination, fi)
 
 input("Press Enter to quit")
 
