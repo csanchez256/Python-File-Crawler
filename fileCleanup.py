@@ -33,7 +33,6 @@ destination = getWorkingDirectory() + '/' + target_file + '_Copy'
 shutil.copytree(rootDir,destination,symlinks=False,ignore=None);
 
 
-
 def removeFiles(destination, file_input):
 	# for all folders, subfolders etc... walk through
 	for dirName, subdirList, fileList in os.walk(destination):
