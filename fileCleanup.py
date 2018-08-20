@@ -4,7 +4,7 @@
 
 import os, shutil
 
-# define the directory you want to crawl
+# define the directory you want to traverse
 def getWorkingDirectory():
         workingDirectory = os.getcwd()
         return workingDirectory
@@ -17,16 +17,17 @@ def fileInput():
         file_input = input('Enter the type of file don\'t want copied: ')
         return file_input
 
-tf = targetFile()
-fi = fileInput()
+target_file = targetFile()
+file_input = fileInput()
+
 print("\nThank you and please wait... \n\n")
 
-file_extension = '.' + fi
+file_extension = '.' + file_input
 
-rootDir = getWorkingDirectory() + '/' + tf
+rootDir = getWorkingDirectory() + '/' + target_file
 
 # Makes a copy of the folder in your working directory
-destination = getWorkingDirectory() + '/' + tf + '_Copy'
+destination = getWorkingDirectory() + '/' + target_file + '_Copy'
 
 # Clone the entire directory
 shutil.copytree(rootDir,destination,symlinks=False,ignore=None);
@@ -38,14 +39,14 @@ def removeFiles(destination, file_input):
 	for dirName, subdirList, fileList in os.walk(destination):
 		print('Found directory: %s' % dirName)
 
-    	# If the file ends in .wmv, then delete it
+    	# delete specified file type
 		for file_name in fileList:
 			print('\t%s' % file_name)
 			if (file_name.endswith('.' + file_input)):
 				os.remove(os.path.join(dirName, file_name))
 
 
-removeFiles(destination, fi)
+removeFiles(destination, file_input)
 
 input("Press Enter to quit")
 
