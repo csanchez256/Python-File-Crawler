@@ -3,6 +3,16 @@
 # Chris Sanchez 8/15/18
 
 import os, shutil
+import wx
+
+
+app = wx.App()
+window = wx.Frame(None, title = "wxPython Frame", size = (300,200))
+panel = wx.Panel(window)
+label1 = wx.StaticText(panel,label = "Hello world", pos = (100,50))
+label2 = wx.StaticText(panel,label = "Hello world", pos = (100,100))
+window.Show(True)
+app.MainLoop()
 
 # define the directory you want to traverse
 def getWorkingDirectory():
@@ -45,7 +55,8 @@ def removeFiles(destination, file_input):
 				os.remove(os.path.join(dirName, file_name))
 
 
-removeFiles(destination, file_input)
+#removeFiles(destination, file_input)
 
 input("Press Enter to quit")
+
 
